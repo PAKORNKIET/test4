@@ -1,0 +1,117 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+  background-color: #ffe6eb;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ซองจดหมาย */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f9c5c8;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+/* ฝาปิดซองจดหมาย */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: #f26a7c;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transition: transform 0.5s ease;
+  transform-origin: top;
+}
+
+/* หัวใจตกแต่ง */
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #ff4c4c;
+  transform: translate(-50%, -50%) rotate(45deg); /* เพิ่ม rotate(45deg) */
+  transition: transform 0.5s ease, rotate 0.5s ease;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff4c4c;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -25px;
+}
+
+
+/* จดหมายข้างใน */
+.letter {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 80%;
+  height: 60%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  z-index: 1;
+  text-align: left;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, 0%);
+  transition: transform 0.8s ease;
+}
+
+/* ข้อความในจดหมาย */
+.letter p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+/* ปุ่ม */
+.button-container {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  background-color: #f26a7c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff4c4c;
+}
